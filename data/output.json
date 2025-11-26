@@ -1,0 +1,79 @@
+{
+    "greeting": "Добрый день",
+    "cards": [
+        {
+            "last_digits": null,
+            "total_spent": 3000.0,
+            "cashback": 30.0
+        },
+        {
+            "last_digits": "*7197",
+            "total_spent": 2500.96,
+            "cashback": 25.0096
+        }
+    ],
+    "top_transactions": [
+        {
+            "date": "01.01.2018",
+            "amount": 3000.0,
+            "category": "Переводы",
+            "description": "Линзомат ТЦ Юность"
+        },
+        {
+            "date": "06.01.2018",
+            "amount": 1065.9,
+            "category": "Супермаркеты",
+            "description": "Пятёрочка"
+        },
+        {
+            "date": "05.01.2018",
+            "amount": 1025.0,
+            "category": "Топливо",
+            "description": "Pskov AZS 12 K2"
+        },
+        {
+            "date": "04.01.2018",
+            "amount": 316.0,
+            "category": "Красота",
+            "description": "OOO Balid"
+        },
+        {
+            "date": "04.01.2018",
+            "amount": 73.06,
+            "category": "Супермаркеты",
+            "description": "Magazin 25"
+        }
+    ],
+    "currency_rates": [
+        {
+            "currency": "USD",
+            "rate": 79.000308
+        },
+        {
+            "currency": "EUR",
+            "rate": 91.117078
+        }
+    ],
+    "stock_prices": [
+        {
+            "stock": "AAPL",
+            "price": 275.92
+        },
+        {
+            "stock": "AMZN",
+            "price": 226.28
+        },
+        {
+            "stock": "GOOGL",
+            "price": 318.58
+        },
+        {
+            "stock": "MSFT",
+            "price": 474
+        },
+        {
+            "stock": "TSLA",
+            "price": 417.78
+        }
+    ]
+}
