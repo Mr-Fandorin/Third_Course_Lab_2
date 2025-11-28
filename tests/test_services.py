@@ -55,3 +55,4 @@ def test_counter_by_category_empty(transactions, expected):
 def test_counter_by_category():
     result = counter_by_category([])
     assert result == "Нет информации за данный месяц"
+
