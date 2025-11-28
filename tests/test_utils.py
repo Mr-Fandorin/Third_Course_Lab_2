@@ -5,8 +5,16 @@ import pandas as pd
 import pytest
 from freezegun import freeze_time
 
-from src.utils import (counter_by_card, get_current_time, get_exchange_rate, get_period_transactions, get_setting,
-                       get_share_price, reader_excel_transaction, sort_by_paiment)
+from src.utils import (
+    counter_by_card,
+    get_current_time,
+    get_exchange_rate,
+    get_period_transactions,
+    get_setting,
+    get_share_price,
+    reader_excel_transaction,
+    sort_by_paiment,
+)
 from tests.conftest import user_setting
 
 
@@ -247,4 +255,3 @@ def test_get_share_price(user_setting):
     with open(test_file, "r", encoding="utf-8") as f:
         data = json.load(f)
         assert data["stock_prices"][0] == {"stock": "AAPL", "price": 277.55}
-

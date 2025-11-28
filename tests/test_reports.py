@@ -101,4 +101,3 @@ def test_save_report(tmp_path: pathlib.Path):
     result = my_function(2, 3)
     expected = pd.DataFrame({"sum": [5]})
     pd.testing.assert_frame_equal(result, expected)
-

@@ -182,4 +182,3 @@ def transactions():
 @pytest.fixture
 def user_setting():
     return {"user_currencies": ["USD", "EUR"], "user_stocks": ["AAPL", "AMZN", "GOOGL", "MSFT", "TSLA"]}
-

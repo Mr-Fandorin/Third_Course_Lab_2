@@ -225,4 +225,3 @@ def spending_by_category(transactions: pd.DataFrame, category: str, date: Option
 
 
 # print(spending_by_category(df_data, 'Сумма операции с округлением', '04-01-2018'))
-
