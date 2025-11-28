@@ -247,3 +247,4 @@ def test_get_share_price(user_setting):
     with open(test_file, "r", encoding="utf-8") as f:
         data = json.load(f)
         assert data["stock_prices"][0] == {"stock": "AAPL", "price": 277.55}
+
