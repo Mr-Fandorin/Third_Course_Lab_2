@@ -61,3 +61,4 @@ def get_cashback_sum(file_name, year, month):
 
 
 # print(get_cashback_sum("../data/operations.xlsx", "2019", "07"))
+
