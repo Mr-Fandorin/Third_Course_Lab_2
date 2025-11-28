@@ -1,0 +1,46 @@
+{
+    "cards": [
+        {
+            "last_digits": "*7197",
+            "total_spent": 193718.33,
+            "cashback": 1937.1833
+        },
+        {
+            "last_digits": null,
+            "total_spent": 3000.0,
+            "cashback": 30.0
+        }
+    ],
+    "top_transactions": [
+        {
+            "date": "07.01.2018",
+            "amount": 120000.0,
+            "category": "Цветы",
+            "description": "Magazin  Prestizh"
+        },
+        {
+            "date": "05.01.2018",
+            "amount": 50250.0,
+            "category": "Топливо",
+            "description": "Pskov AZS 12 K2"
+        },
+        {
+            "date": "06.01.2018",
+            "amount": 10650.9,
+            "category": "Супермаркеты",
+            "description": "Пятёрочка"
+        },
+        {
+            "date": "04.01.2018",
+            "amount": 7300.06,
+            "category": "Супермаркеты",
+            "description": "Magazin 25"
+        },
+        {
+            "date": "05.01.2018",
+            "amount": 5100.0,
+            "category": "Красота",
+            "description": "OOO Balid"
+        }
+    ]
+}

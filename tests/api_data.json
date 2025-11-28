@@ -1,0 +1,12 @@
+{
+    "currency_rates": [
+        {
+            "currency": "USD",
+            "rate": 77.949058
+        },
+        {
+            "currency": "EUR",
+            "rate": 77.949058
+        }
+    ]
+}
