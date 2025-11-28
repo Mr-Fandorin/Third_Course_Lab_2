@@ -1,7 +1,7 @@
 import json
 
-from src.utils import (counter_by_card, get_current_time, get_exchange_rate, get_jsonparsed_data,
-                       get_period_transactions, get_setting, reader_excel_transaction, sort_by_paiment)
+from src.utils import (counter_by_card, get_current_time, get_exchange_rate, get_period_transactions, get_setting,
+                       get_share_price, reader_excel_transaction, sort_by_paiment)
 
 
 def get_info_by_request(request_date):
@@ -19,12 +19,11 @@ def get_info_by_request(request_date):
     add_json_info = counter_by_card(sort_list_transactions)  # Подсчет сумм переводам по картам
     user_data = get_setting("../data/user_settings.json")  # Считывание данных из JSON-файла пользователя
     user_rates = get_exchange_rate(user_data)  # Запрос курса валют по API
-    user_stocks = get_jsonparsed_data(user_data)  # Запрос стоимости акций по API
+    user_stocks = get_share_price(user_data)  # Запрос стоимости акций по API
     with open("../data/output.json", "r", encoding="utf-8") as f:  # Чтение итогового файла JSON со всеми данными
         existing_data = json.load(f)
 
     return existing_data
 
 
-print(get_info_by_request("04-01-2018 15:00:41"))
-
+# print(get_info_by_request("04-01-2018 15:00:41"))
