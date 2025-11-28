@@ -215,3 +215,4 @@ def get_share_price(dict_symbol_names_company, filename="../data/output.json"):
 
 
 # print(get_share_price({'user_currencies': ['USD', 'EUR'], 'user_stocks': ['AAPL', 'AMZN', 'GOOGL', 'MSFT', 'TSLA']}))
+
