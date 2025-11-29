@@ -5,16 +5,8 @@ import pandas as pd
 import pytest
 from freezegun import freeze_time
 
-from src.utils import (
-    counter_by_card,
-    get_current_time,
-    get_exchange_rate,
-    get_period_transactions,
-    get_setting,
-    get_share_price,
-    reader_excel_transaction,
-    sort_by_paiment,
-)
+from src.utils import (counter_by_card, get_current_time, get_exchange_rate, get_period_transactions, get_setting,
+                       get_share_price, reader_excel_transaction, sort_by_paiment)
 from tests.conftest import user_setting
 
 
@@ -223,7 +215,6 @@ def test_counter_by_card(transactions):
 
 def test_get_exchange_rate(user_setting):
     test_file = "tests/api_data.json"
-    # get_exchange_rate(user_setting, test_file)
     mock_response = Mock()
     mock_response.status_code = 200
     mock_response.json.return_value = {
@@ -235,7 +226,6 @@ def test_get_exchange_rate(user_setting):
     }
 
     with patch("requests.request", return_value=mock_response):
-        # result = get_exchange_rate(user_setting)
         result = get_exchange_rate(user_setting, test_file)
         assert result == None
     with open(test_file, "r", encoding="utf-8") as f:
@@ -245,11 +235,9 @@ def test_get_exchange_rate(user_setting):
 
 def test_get_share_price(user_setting):
     test_file = "tests/api_share.json"
-    # get_exchange_rate(user_setting, test_file)
     mock_response = Mock()
     mock_response.read.return_value = [{"symbol": "AAPL", "price": 277.55, "change": 0.58, "volume": 31050665}]
     with patch("urllib.request.urlopen", return_value=mock_response):
-        # result = get_exchange_rate(user_setting)
         result = get_share_price(user_setting, test_file)
         assert result == None
     with open(test_file, "r", encoding="utf-8") as f:
