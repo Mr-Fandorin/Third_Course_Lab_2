@@ -31,7 +31,7 @@ def test_get_info_by_request(
     mock_get_exchange_rate.return_value = 1.0
     mock_get_share_price.return_value = 100.0
 
-    get_info_by_request("04-01-2018 15:00:41", test_file)
+    result = get_info_by_request("04-01-2018 15:00:41", test_file)
     with open(test_file, "w", encoding="utf-8") as f:
         data = json.load(f)
         assert data == {"greeting": "Добрый день"}
@@ -39,5 +39,5 @@ def test_get_info_by_request(
     mock_get_setting.assert_called_once_with("../data/user_settings.json")
     with patch("builtins.open", mock_open()) as mocked_open:
         mock_load.return_value = {"greeting": "Добрый день"}
-        result = get_info_by_request("04-01-2018 15:00:41", test_file)
+        # result = get_info_by_request("04-01-2018 15:00:41", test_file)
         assert result == {"greeting": "Добрый день"}
