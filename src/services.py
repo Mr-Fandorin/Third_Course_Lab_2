@@ -1,12 +1,15 @@
 import datetime
 import logging
+import os
 from collections import defaultdict
 
 from src.utils import reader_excel_transaction
 
+PATH_TO_FILE_SERVICES = os.path.join(os.path.abspath(os.path.dirname(__file__)), "..", "logs", "services.log")
+
 logger = logging.getLogger("services")
 logger.setLevel(logging.INFO)
-file_handler = logging.FileHandler("../logs/services.log", encoding="utf-8", mode="w")
+file_handler = logging.FileHandler(PATH_TO_FILE_SERVICES, encoding="utf-8", mode="w")
 file_formatter = logging.Formatter("%(asctime)s %(levelname)s %(name)s %(funcName)s: %(message)s")
 file_handler.setFormatter(file_formatter)
 logger.addHandler(file_handler)

@@ -14,9 +14,11 @@ load_dotenv()
 API_KEY = os.getenv("API_KEY")
 API_KEY_SHARES = os.getenv("API_KEY_SHARES")
 
+PATH_TO_FILE_UTILS = os.path.join(os.path.abspath(os.path.dirname(__file__)), "..", "logs", "utils.log")
+
 logger = logging.getLogger("utils")
 logger.setLevel(logging.INFO)
-file_handler = logging.FileHandler("../logs/utils.log", encoding="utf-8", mode="w")
+file_handler = logging.FileHandler(PATH_TO_FILE_UTILS, encoding="utf-8", mode="w")
 file_formatter = logging.Formatter("%(asctime)s %(levelname)s %(name)s %(funcName)s: %(message)s")
 file_handler.setFormatter(file_formatter)
 logger.addHandler(file_handler)
@@ -156,7 +158,6 @@ def get_exchange_rate(dict_currency, filename="../data/output.json"):
             raise ValueError("Failed to get currency rate")
         status_code = response.status_code
         result = response.json()
-        # print(result)
         dict_rate = {}
         dict_rate["currency"] = from_currency
         dict_rate["rate"] = result["info"]["rate"]

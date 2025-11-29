@@ -1,15 +1,7 @@
 import json
 
-from src.utils import (
-    counter_by_card,
-    get_current_time,
-    get_exchange_rate,
-    get_period_transactions,
-    get_setting,
-    get_share_price,
-    reader_excel_transaction,
-    sort_by_paiment,
-)
+from src.utils import (counter_by_card, get_current_time, get_exchange_rate, get_period_transactions, get_setting,
+                       get_share_price, reader_excel_transaction, sort_by_paiment)
 
 
 def get_info_by_request(request_date, file_data="../data/output.json"):
@@ -34,4 +26,4 @@ def get_info_by_request(request_date, file_data="../data/output.json"):
     return existing_data
 
 
-print(get_info_by_request("04-01-2018 15:00:41"))
+# print(get_info_by_request("04-01-2018 15:00:41"))
