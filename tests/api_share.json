@@ -1,0 +1,24 @@
+{
+    "stock_prices": [
+        {
+            "stock": "AAPL",
+            "price": 277.55
+        },
+        {
+            "stock": "AMZN",
+            "price": 229.16
+        },
+        {
+            "stock": "GOOGL",
+            "price": 319.95
+        },
+        {
+            "stock": "MSFT",
+            "price": 485.5
+        },
+        {
+            "stock": "TSLA",
+            "price": 426.58
+        }
+    ]
+}
