@@ -163,7 +163,6 @@ def test_get_current_time_morning():
         assert result == part_of_day
 
 
-
 @patch(
     "builtins.open",
     new_callable=mock_open,

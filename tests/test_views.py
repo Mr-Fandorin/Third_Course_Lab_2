@@ -6,6 +6,7 @@ from src.views import get_info_by_request
 
 PATH_TO_FILE_VIEW = os.path.join(os.path.abspath(os.path.dirname(__file__)), "view.json")
 
+
 @patch("src.views.reader_excel_transaction")
 @patch("src.views.get_period_transactions")
 @patch("src.views.sort_by_paiment")
@@ -20,7 +21,7 @@ def test_get_info_by_request(
     mock_counter_by_card,
     mock_sort_by_paiment,
     mock_get_period_transactions,
-    mock_reader_excel_transaction
+    mock_reader_excel_transaction,
 ):
     test_file = PATH_TO_FILE_VIEW
     mock_reader_excel_transaction.return_value = []
