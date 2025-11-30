@@ -1,8 +1,10 @@
 import json
+import os
 from unittest.mock import mock_open, patch
 
 from src.views import get_info_by_request
 
+PATH_TO_FILE_VIEW = os.path.join(os.path.abspath(os.path.dirname(__file__)), "view.json")
 
 @patch("src.views.reader_excel_transaction")
 @patch("src.views.get_period_transactions")
@@ -20,7 +22,7 @@ def test_get_info_by_request(
     mock_get_period_transactions,
     mock_reader_excel_transaction
 ):
-    test_file = "../tests/view.json"
+    test_file = PATH_TO_FILE_VIEW
     mock_reader_excel_transaction.return_value = []
     mock_get_period_transactions.return_value = []
     mock_sort_by_paiment.return_value = []
