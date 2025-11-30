@@ -163,13 +163,6 @@ def test_get_current_time_morning():
         assert result == part_of_day
 
 
-# @patch('datetime.datetime')
-# def test_get_current_time(mock_datetime):
-#     part_of_day = "Добрый день"
-#     mock_datetime.now.return_value.time.return_value = datetime.time(12, 30, 45)
-#     result = get_current_time()
-#     assert result == part_of_day
-
 
 @patch(
     "builtins.open",
@@ -233,13 +226,14 @@ def test_get_exchange_rate(user_setting):
         assert data["currency_rates"][0] == {"currency": "USD", "rate": 77.949058}
 
 
-def test_get_share_price(user_setting):
+@patch("src.utils.urlopen")
+def test_get_share_price(mock_urlopen, user_setting):
     test_file = "tests/api_share.json"
-    mock_response = Mock()
-    mock_response.read.return_value = [{"symbol": "AAPL", "price": 277.55, "change": 0.58, "volume": 31050665}]
-    with patch("urllib.request.urlopen", return_value=mock_response):
-        result = get_share_price(user_setting, test_file)
-        assert result == None
+    mock_urlopen.return_value.read.return_value.decode.return_value = (
+        '[{"symbol": "AAPL", "price": 277.55, "change": 0.58, "volume": 31050665}]'
+    )
+    result = get_share_price(user_setting, test_file)
+    assert result is None
     with open(test_file, "r", encoding="utf-8") as f:
         data = json.load(f)
         assert data["stock_prices"][0] == {"stock": "AAPL", "price": 277.55}

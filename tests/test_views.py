@@ -11,7 +11,6 @@ from src.views import get_info_by_request
 @patch("module_name.get_setting")
 @patch("module_name.get_exchange_rate")
 @patch("module_name.get_share_price")
-@patch("json.load")
 def test_get_info_by_request(
     mock_get_share_price,
     mock_get_exchange_rate,
@@ -19,8 +18,7 @@ def test_get_info_by_request(
     mock_counter_by_card,
     mock_sort_by_paiment,
     mock_get_period_transactions,
-    mock_reader_excel_transaction,
-    mock_load,
+    mock_reader_excel_transaction
 ):
     test_file = "../tests/view.json"
     mock_reader_excel_transaction.return_value = []
@@ -32,12 +30,6 @@ def test_get_info_by_request(
     mock_get_share_price.return_value = 100.0
 
     result = get_info_by_request("04-01-2018 15:00:41", test_file)
-    with open(test_file, "w", encoding="utf-8") as f:
-        data = json.load(f)
-        assert data == {"greeting": "Добрый день"}
+    assert result == {"greeting": "Добрый день"}
     mock_reader_excel_transaction.assert_called_once_with("../data/operations.xlsx")
     mock_get_setting.assert_called_once_with("../data/user_settings.json")
-    with patch("builtins.open", mock_open()) as mocked_open:
-        mock_load.return_value = {"greeting": "Добрый день"}
-        # result = get_info_by_request("04-01-2018 15:00:41", test_file)
-        assert result == {"greeting": "Добрый день"}
